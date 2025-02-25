@@ -1,0 +1,86 @@
+/* Estilos generales */
+body {
+    background-color: #fff;
+    color: #333;
+    padding-top: 70px; /* Espacio para el menú fijo */
+}
+
+/* Modo oscuro */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+body.dark-mode .navbar-light {
+    background-color: #222 !important;
+}
+
+body.dark-mode .bg-light {
+    background-color: #444 !important;
+}
+
+body.dark-mode .project-card,
+body.dark-mode .experience-card {
+    border-color: #555;
+}
+
+body.dark-mode .fab {
+    color: #fff;
+}
+
+/* Homepage con gradiente animado */
+.homepage {
+    background: linear-gradient(270deg, #ff7e5f, #feb47b);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    padding: 100px 0;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Animación del texto en Homepage */
+.animated-text {
+    opacity: 0;
+    animation: slideIn 1.5s ease-in-out forwards;
+}
+
+@keyframes slideIn {
+    0% { opacity: 0; transform: translateY(-50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilos de las cards */
+.project-card, .experience-card {
+    border: 1px solid #ddd;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover, .experience-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.project-card {
+    animation: heartbeat 3s infinite;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .homepage {
+        padding: 50px 0;
+    }
+
+    .animated-text {
+        font-size: 2rem;
+    }
+}
